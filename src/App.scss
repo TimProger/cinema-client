@@ -1,0 +1,9 @@
+@import './styles/colors.scss';
+
+.Test1 {
+  color: $red;
+
+  &__Test2 {
+    color: $blue;
+  }
+}
