@@ -1,9 +1,16 @@
 @import './styles/colors.scss';
 
-.Test1 {
-  color: $red;
+.block {
+  // block
+  display: flex;
 
-  &__Test2 {
+  &__text {
+    // block__text
     color: $blue;
+
+    &__header {
+      // block__text__header
+      font-size: 25px;
+    }
   }
 }

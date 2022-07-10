@@ -1,10 +1,13 @@
-import { applyMiddleware, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers/root';
+import { configureStore } from '@reduxjs/toolkit'
+import reducer from './slices/root';
 
-// Создаём store при помощи импортированной функции,
-// в которую в качестве аргумента передаём редюсеры
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+export const store = configureStore({
+    reducer,
+    devTools: true
+})
 
 export default store
+
+export type RootState = ReturnType<typeof store.getState>
+
+export type AppDispatch = typeof store.dispatch
